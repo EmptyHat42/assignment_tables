@@ -1,0 +1,67 @@
+/* Basic font-stack för sans-serif typsnitt */
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Vi kör border collapse utanför th, td och inte tillsammans för att vi inte ska 
+   få en border på hela tabellen utan bara runt våra celler. 
+   Detta för att vi inte ska få en border runt våran tfoot. */
+table{
+    border-collapse: collapse;
+}
+
+th, td{
+    border: 1px solid black;
+}
+
+/* Vi sätter table-layout: fixed här för att se till att alla celler har samma bredd */
+table{
+    width: 600px;
+    table-layout: fixed;
+}
+
+/* Grå färg för header-raden */
+thead th{
+    background-color: lightgray;
+}
+
+/* Gul bakgrundsfärg som bas för hela tabellen, exkluderande header raden*/
+tbody tr{
+    background-color: rgb(223, 182, 0);
+}
+
+/* Röd bakgrundsfärg och ljusgrå text för varannan rad i hela tabellen, exkluderande header raden*/
+tbody tr:nth-child(even){
+    color: lightgray;
+    background-color: rgb(201, 0, 0);
+}
+
+/* Vi justerar text beroende på kolumn */
+th:nth-child(1), 
+td:nth-child(1){
+    text-align: left;
+}
+
+th:nth-child(2), 
+td:nth-child(2),
+th:nth-child(3), 
+td:nth-child(3){
+    text-align: center;
+}
+
+th:nth-child(4), 
+td:nth-child(4){
+    text-align: right;
+}
+
+/* På grund av specifitet så behövs th före klassen för att th:nth-child(1) inte ska overridea. 
+   Vi tar bort border, gör bakgrunden vit igen, gör texten lite större, centrerar och gör 
+   texten lite smalare då den är bold som default i th*/
+th.intel{
+    border: none;
+    background-color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight:500;
+}
+
