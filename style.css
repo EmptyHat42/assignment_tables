@@ -37,14 +37,11 @@ tbody tr:nth-child(even){
 }
 
 /* Vi justerar text beroende på kolumn */
-th:nth-child(1), 
-td:nth-child(1){
+th:nth-child(1){
     text-align: left;
 }
 
-th:nth-child(2), 
 td:nth-child(2),
-th:nth-child(3), 
 td:nth-child(3){
     text-align: center;
 }
@@ -57,11 +54,9 @@ td:nth-child(4){
 /* På grund av specifitet så behövs th före klassen för att th:nth-child(1) inte ska overridea. 
    Vi tar bort border, gör bakgrunden vit igen, gör texten lite större, centrerar och gör 
    texten lite smalare då den är bold som default i th*/
-th.intel{
-    border: none;
-    background-color: white;
+caption{
+    caption-side: bottom;
     font-size: 1.5rem;
-    text-align: center;
     font-weight:500;
 }
 
